@@ -14,7 +14,9 @@ namespace CodingChallengeTutorial
         public static dynamic LessonTwoSolution(int[] arrayToBeEvaluated)
         { 
 
-            var duplicates = arrayToBeEvaluated.GroupBy(x => x).Where(y => y.Count() > 1).Select(x => x.Key).ToList();
+            var duplicates = arrayToBeEvaluated.GroupBy(x => x).Where(y => y.Count() > 1).Select(x => x.Key).ToList() ?? throw new Exception("No duplicates found");
+
+
             var unique = new List<int>();
             var oddNumbers = new List<int>();
 
